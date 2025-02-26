@@ -22,7 +22,7 @@ function Croom() {
         if (localStorage.getItem("code")) return
         else {
             try {
-                fetch("http://localhost:5000/create", { method: "GET" })
+                fetch("https://anonyme-kz4t.onrender.com/create", { method: "GET" })
                     .then(res => res.json())
                     .then(data => {
                         localStorage.setItem("code", JSON.stringify(data))
@@ -36,7 +36,7 @@ function Croom() {
     }, []);
 
     useEffect(() => {
-        const newSocket = io("http://localhost:5000");
+        const newSocket = io("https://anonyme-kz4t.onrender.com");
         setSocket(newSocket);
         newSocket.on("connect", () => { });
 
@@ -63,7 +63,7 @@ function Croom() {
             setchat((prevChat) => [{ fileName, downloadUrl, name }, ...prevChat]);
         });
 
-        // Cleanup on component unmount
+        // Cleanup on component unmou
         return () => {
             const currentName = nameRef.current;
                 const currentCode = JSON.parse(localStorage.getItem("code"));
