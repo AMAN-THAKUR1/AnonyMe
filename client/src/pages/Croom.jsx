@@ -99,7 +99,7 @@ function Croom() {
 
     return (
         
-        <div className="flex justify-start w-full " onClick={() => options ? setoptions(false) : ""}>
+        <div className="flex justify-start h-fit w-full " onClick={() => options ? setoptions(false) : ""}>
             <div><Toaster /></div>
             <Sidebar
                 code={code}
